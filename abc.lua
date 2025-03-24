@@ -1,4 +1,5 @@
 --SB PUHLASH
+if os.date
 
 if game.PlaceId == 6403373529 then
 
@@ -717,7 +718,7 @@ local Button = Tab:CreateButton({
     end,
 })
 
-elseif gmae.PlaceId == 13833961666 then
+elseif game.PlaceId == 13833961666 then
 
     local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
