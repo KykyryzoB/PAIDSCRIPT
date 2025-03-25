@@ -898,6 +898,37 @@ elseif game.PlaceId == 13833961666 then
         end,
      })
 
+     local Button = Tab:CreateButton({
+        Name = "1 slap mini bobs",
+        Callback = function()
+            if game.Players.LocalPlayer.leaderstats.Glove.Value == "Reaper" then
+                for _, v in ipairs(workspace:GetDescendants()) do
+                    if v.Name == "BobClone" then
+                        game:GetService("ReplicatedStorage").ReaperHit:FireServer(v:FindFirstChild("HumanoidRootPart"))
+                    end
+                end
+            elseif game.Players.LocalPlayer.leaderstats.Glove.Value == "Killstreak" then
+                for _, v in ipairs(workspace:GetDescendants()) do
+                    if v.Name == "BobClone" then
+                        game:GetService("ReplicatedStorage").KSHit:FireServer(v:FindFirstChild("HumanoidRootPart"))
+                    end
+                end
+            elseif game.Players.LocalPlayer.leaderstats.Glove.Value == "God's Hand" then
+                for _, v in ipairs(workspace:GetDescendants()) do
+                    if v.Name == "BobClone" then
+                        game:GetService("ReplicatedStorage").Godshand:FireServer(v:FindFirstChild("HumanoidRootPart"))
+                    end
+                end
+            elseif game.Players.LocalPlayer.leaderstats.Glove.Value == "Tycoon" then
+                for _, v in ipairs(workspace:GetDescendants()) do
+                    if v.Name == "BobClone" then
+                        game:GetService("ReplicatedStorage").GeneralHit:FireServer(v:FindFirstChild("HumanoidRootPart"))
+                    end
+                end
+            end
+        end,
+    })
+
      local Tab = Window:CreateTab("Misc", 1)
 
      local Toggle = Tab:CreateToggle({
