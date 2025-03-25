@@ -129,6 +129,7 @@ local Button = Tab:CreateButton({
                             Togletime:Set(false)
                             getgenv().time = false
                             time1 = 0
+                            break
                         end
                     wait(1)
                     end
@@ -174,6 +175,7 @@ local Button = Tab:CreateButton({
                             Togletime:Set(false)
                             getgenv().time = false
                             time1 = 0
+                            break
                         end
                     wait(1)
                     end
@@ -230,6 +232,7 @@ local Button = Tab:CreateButton({
                             Togletime:Set(false)
                             getgenv().time = false
                             time1 = 0
+                            break
                         end
                     wait(1)
                     end
