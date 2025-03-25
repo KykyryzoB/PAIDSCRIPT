@@ -1656,6 +1656,7 @@ elseif game.PlaceId == 92516899071319 then
                         fireclickdetector(workspace.Finale.Reward.Hitbox:FindFirstChild("Click"))
                         end
                     end
+                end,
             })
 
 end
