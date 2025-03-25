@@ -100,7 +100,7 @@ getgenv().time = false
 
 local Togletime = Tab:CreateToggle({
     Name = "Reset time",
-    Default = false
+    Default = false,
     Callback = function(Value)
         if Value then
             getgenv().time = true
