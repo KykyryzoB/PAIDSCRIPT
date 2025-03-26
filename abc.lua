@@ -619,6 +619,16 @@ elseif game.PlaceId == 7234087065 then
 
 local Tab = Window:CreateTab("Badge", 7733673987)
 
+local Section = Tab:CreateSection("Clock")
+
+local Button = Tab:CreateButton({
+    Name = "Clock",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(250.048584, 150.197617, -457.68692, 0.99808687, -5.89701905e-08, -0.0618272461, 5.99845507e-08, 1, 1.45502641e-08, 0.0618272461, -1.82311073e-08, 0.99808687)
+        game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Wait",Text = "Wait for Teleport.",Icon = "rbxassetid://7733656100",Duration = 5})
+    end,
+})
+
 local Section = Tab:CreateSection("Boxer")
 
 local Button = Tab:CreateButton({
@@ -1659,6 +1669,76 @@ elseif game.PlaceId == 92516899071319 then
                         fireclickdetector(workspace.Finale.Reward.Hitbox:FindFirstChild("Click"))
                         end
                     end
+                end,
+            })
+
+
+        elseif game.PlaceId == 102908326578005 then
+
+            local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+            local Window = Rayfield:CreateWindow({
+                Name = "OGG HUB",
+                Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+                LoadingTitle = "Loading Hub",
+                LoadingSubtitle = "by Kykyryz0B",
+                Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+             
+                DisableRayfieldPrompts = false,
+                DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+             
+                ConfigurationSaving = {
+                   Enabled = false,
+                   FolderName = nil, -- Create a custom folder for your hub/game
+                   FileName = "Big Hub"
+                },
+             
+                Discord = {
+                   Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
+                   Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+                   RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+                },
+             
+                KeySystem = true, -- Set this to true to use our key system
+                KeySettings = {
+                   Title = "Key",
+                   Subtitle = "Key System",
+                   Note = "No method of obtaining the key is provided", -- Use this to tell the user how to get a key
+                   FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+                   SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+                   GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+                   Key = {"1488"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+                }
+            })
+
+            local Tab = Window:CreateTab("Combat", "rewind")
+
+            Tab:CreateButton({
+                Name = "Get CLock",
+                Callback = function() 
+                    for i,v in ipairs(workspace.Furniture.jorgisBasketballs:GetChildren()) do
+                        if v.Name == "B-Ball" and v:FindFirstChild("ClickDetector") then
+                            if not fireclickdetector then
+                                v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                            elseif fireclickdetector then
+                                fireclickdetector(v.ClickDetector, 0)
+                            fireclickdetector(v.ClickDetector, 1)
+                            end
+                        end
+                    end
+                    wait(3)
+                    for i,v in ipairs(workspace.Furniture.jorgisDresser:GetChildren()) do
+                        if v.Name == "Drawer" and v:FindFirstChild("Handle") and v.Handle:FindFirstChild("ClickDetector") then
+                            if not fireclickdetector then
+                                v.Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                            elseif fireclickdetector then
+                                fireclickdetector(v.Handle.ClickDetector, 0)
+                                fireclickdetector(v.Handle.ClickDetector, 1)
+                            end
+                        end
+                    end
+                    wait(3)
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Furniture.finalDoor.Base.Base.CFrame
                 end,
             })
 
