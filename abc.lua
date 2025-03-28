@@ -1803,8 +1803,9 @@ elseif game.PlaceId == 117232463555132 then
     Tab:CreateButton({
         Name = "Start Fight",
         Callback = function() 
-            firetouchinterest(game.Players.LocalPlayer.Character.Head, workspace.Map.Components.Regions.StartBossFight, 0)
-            firetouchinterest(game.Players.LocalPlayer.Character.Head, workspace.Map.Components.Regions.StartBossFight, 1)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-7.51407528, 845.499939, 62.3050079, -0.953061819, 6.17746352e-08, -0.302775681, 8.36530205e-08, 1, -5.92909792e-08, 0.302775681, -8.18360704e-08, -0.953061819)
+            wait(0.2)
+            fireproximityprompt(workspace.Map.Components.NPCs.FinalBoss.FinalBoss.Head.ProximityPrompt)
         end,
     })
 
