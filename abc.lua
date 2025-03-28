@@ -50,6 +50,24 @@ local Window = Rayfield:CreateWindow({
 
 local Tab = Window:CreateTab("Badge", 7733673987) -- Title, Image
 
+local Section = Tab:CreateSection("SwordFighter")
+
+local Button = Tab:CreateButton({
+    Name = "Get SwordFIghter",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(318.443176, 39.7466125, 196.719238, 0.608730614, -2.33587958e-08, 0.793376982, -2.91402635e-08, 1, 5.18005514e-08, -0.793376982, -5.4651796e-08, 0.608730614)
+        wait(0.2)
+        local args = {
+            [1] = "Ban Hammer"
+        }
+
+        game:GetService("ReplicatedStorage"):WaitForChild("RetroAbility"):FireServer(unpack(args))
+        wait(0.2)
+        firetouchinterest(game.Players.LocalPlayer.Character.Head, workspace.Arena.CannonIsland["Cannon Island [OLD]"].Model.Towers.TeleportSFHitbox, 0)
+        firetouchinterest(game.Players.LocalPlayer.Character.Head, workspace.Arena.CannonIsland["Cannon Island [OLD]"].Model.Towers.TeleportSFHitbox, 1)
+    end,
+})
+
 local Section = Tab:CreateSection("Bob Farm")
 
 local Button = Tab:CreateButton({
@@ -1741,5 +1759,68 @@ elseif game.PlaceId == 92516899071319 then
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Furniture.finalDoor.Base.Base.CFrame
                 end,
             })
+
+elseif game.PlaceId == 117232463555132 then
+
+    local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+    local Window = Rayfield:CreateWindow({
+        Name = "Sword Fight on The Heights HUB",
+        Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+        LoadingTitle = "Loading Hub",
+        LoadingSubtitle = "by Kykyryz0B",
+        Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+     
+        DisableRayfieldPrompts = false,
+        DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+     
+        ConfigurationSaving = {
+           Enabled = false,
+           FolderName = nil, -- Create a custom folder for your hub/game
+           FileName = "Big Hub"
+        },
+     
+        Discord = {
+           Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
+           Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+           RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+        },
+     
+        KeySystem = true, -- Set this to true to use our key system
+        KeySettings = {
+           Title = "Key",
+           Subtitle = "Key System",
+           Note = "No method of obtaining the key is provided", -- Use this to tell the user how to get a key
+           FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+           SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+           GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+           Key = {"1488"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+        }
+    })
+
+    local Tab = Window:CreateTab("Combat", "rewind")
+
+    Tab:CreateButton({
+        Name = "Start Fight",
+        Callback = function() 
+            firetouchinterest(game.Players.LocalPlayer.Character.Head, workspace.Map.Components.Regions.StartBossFight, 0)
+            firetouchinterest(game.Players.LocalPlayer.Character.Head, workspace.Map.Components.Regions.StartBossFight, 1)
+        end,
+    })
+
+    Tab:CreateButton({
+        Name = "kill Boss",
+        Callback = function() 
+            workspace.Map.Components.NPCs.FinalBoss.FinalBoss.Humanoid.Health = 0
+        end,
+    })
+
+    Tab:CreateButton({
+        Name = "get Glove after kill",
+        Callback = function() 
+            workspace.Map.Components.GloveIsland.ClaimGlove.ProximityPrompt.MaxActivationDistance = 1000
+            fireproximityprompt(workspace.Map.Components.GloveIsland.ClaimGlove.ProximityPrompt)
+        end,
+    })
 
 end
